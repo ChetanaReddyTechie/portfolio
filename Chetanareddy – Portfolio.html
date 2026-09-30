@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chetanareddy – Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef2f6;--card:#fff;--ink:#14213d;--mute:#56627a;--line:#d5dce6;--acc:#2f5bff;--onacc:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1424;--card:#172038;--ink:#eef2f6;--mute:#9aa6c0;--line:#2a3554}}
+:root[data-theme="dark"]{--bg:#0e1424;--card:#172038;--ink:#eef2f6;--mute:#9aa6c0;--line:#2a3554}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.65 "Instrument Sans",system-ui,sans-serif;transition:background .3s,color .3s}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.1;margin:0 0 .5em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar{max-width:1000px;margin:auto;padding:.7rem 1.2rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.logo{font:800 1.2rem "Bricolage Grotesque";text-decoration:none;margin-right:auto}
+nav{display:flex;gap:.3rem;flex-wrap:wrap}
+nav a{padding:.35rem .8rem;border-radius:99px;text-decoration:none;font-weight:500;color:var(--mute)}
+nav a.on,nav a:hover{background:var(--acc);color:var(--onacc)}
+.tools{display:flex;gap:.5rem;align-items:center}
+button,.btn{font:600 .95rem "Instrument Sans";background:var(--acc);color:var(--onacc);border:0;border-radius:10px;padding:.65rem 1.1rem;cursor:pointer;text-decoration:none;display:inline-block}
+.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.sw{width:22px;height:22px;border-radius:50%;padding:0;border:2px solid var(--card);box-shadow:0 0 0 1px var(--line)}
+main{max-width:1000px;margin:auto;padding:2.5rem 1.2rem 4rem}
+.page{display:none}.page.on{display:block}
+.hero{display:grid;grid-template-columns:1.4fr 1fr;gap:2.5rem;align-items:center;min-height:60vh}
+.hero h1{font-size:clamp(2.6rem,7vw,4.8rem);font-weight:800;letter-spacing:-.03em}
+.type{color:var(--acc);border-right:3px solid var(--acc);padding-right:4px;animation:blink .8s step-end infinite}
+@keyframes blink{50%{border-color:transparent}}
+.hero p{color:var(--mute);max-width:46ch;font-size:1.1rem}
+.avatar{width:100%;max-width:330px;aspect-ratio:1;border-radius:36% 64% 58% 42%/42% 40% 60% 58%;background:var(--acc);display:grid;place-items:center;font:800 6rem "Bricolage Grotesque";color:var(--onacc);justify-self:center;animation:morph 9s ease-in-out infinite}
+@keyframes morph{50%{border-radius:60% 40% 42% 58%/56% 60% 40% 44%}}
+.row{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.5rem}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;padding:0;list-style:none}
+.chips li{border:1.5px solid var(--line);border-radius:99px;padding:.25rem .9rem;font-weight:500}
+.bar-skill{margin:.8rem 0}
+.bar-skill span{display:flex;justify-content:space-between;font-weight:500}
+.track{height:8px;background:var(--line);border-radius:9px;overflow:hidden}
+.fill{height:100%;background:var(--acc);width:0;transition:width 1s .2s}
+.tl{border-left:2px solid var(--line);padding-left:1.2rem;margin:0}
+.tl li{list-style:none;margin-bottom:1.1rem;position:relative}
+.tl li:before{content:"";position:absolute;left:-1.6rem;top:.55rem;width:10px;height:10px;border-radius:50%;background:var(--acc)}
+.tl small{color:var(--mute);display:block}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.2rem}
+.proj{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.proj .img{height:140px;display:grid;place-items:center;font:800 2.2rem "Bricolage Grotesque";color:#fff}
+.proj div.b{padding:1.1rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
+.proj p{margin:0;color:var(--mute)}
+.proj .links{margin-top:auto;display:flex;gap:1rem;font-weight:600}
+.filters{display:flex;gap:.5rem;margin-bottom:1.2rem;flex-wrap:wrap}
+.filters .ghost.on{background:var(--ink);color:var(--bg)}
+.post{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1.2rem;margin-bottom:1rem}
+.post small{color:var(--mute)}
+form{display:grid;gap:1rem;max-width:520px}
+label{font-weight:600;display:grid;gap:.3rem}
+input,textarea{font:inherit;padding:.7rem;border-radius:10px;border:1.5px solid var(--line);background:var(--card);color:var(--ink)}
+input.bad,textarea.bad{border-color:#d62839}
+.err{color:#d62839;font-weight:500;font-size:.9rem;min-height:1.2em}
+.ok{color:#1b8a4b;font-weight:600}
+footer{border-top:1px solid var(--line);text-align:center;padding:1.5rem;color:var(--mute)}
+@media(max-width:720px){.hero,.two{grid-template-columns:1fr}.avatar{max-width:200px;font-size:4rem;order:-1;justify-self:start}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="bar">
+  <a class="logo" href="#/home">chetanareddy.dev</a>
+  <nav aria-label="Main">
+    <a href="#/home">Home</a><a href="#/about">About</a><a href="#/projects">Projects</a><a href="#/blog">Blog</a><a href="#/contact">Contact</a>
+  </nav>
+  <div class="tools">
+    <button class="sw" data-c="#2f5bff" style="background:#2f5bff" aria-label="Blue theme"></button>
+    <button class="sw" data-c="#e4572e" style="background:#e4572e" aria-label="Orange theme"></button>
+    <button class="sw" data-c="#0f9d75" style="background:#0f9d75" aria-label="Green theme"></button>
+    <button class="ghost" id="mode" aria-label="Toggle dark mode">Dark</button>
+  </div>
+</div></header>
+
+<main>
+<section class="page" id="home">
+  <div class="hero">
+    <div>
+      <h1>Hi, I'm Chetanareddy. I build <span class="type" id="type"></span></h1>
+      <p>Full stack Java developer who likes clean interfaces and reliable back ends. I'm currently learning Spring Boot and building projects in public.</p>
+      <div class="row"><a class="btn" href="#/projects">See my projects</a><a class="btn ghost" href="#/contact">Get in touch</a></div>
+    </div>
+    <div class="avatar" role="img" aria-label="Profile picture placeholder">C</div>
+  </div>
+</section>
+
+<section class="page" id="about">
+  <h2>About me</h2>
+  <div class="two">
+    <div>
+      <p>I'm a computer science student who enjoys turning ideas into working software. I started with Java, moved to the web, and now build both the interface and the server behind it.</p>
+      <h3>Skills</h3>
+      <div id="skills"></div>
+      <ul class="chips"><li>Git</li><li>REST APIs</li><li>MySQL</li><li>Spring Boot</li><li>Responsive design</li></ul>
+    </div>
+    <div>
+      <h3>Education &amp; experience</h3>
+      <ul class="tl">
+        <li><strong>B.Tech, Computer Science</strong><small>2022 – 2026 · Your University</small></li>
+        <li><strong>Full Stack Java course</strong><small>2025 · Java, Spring, HTML, CSS, JS</small></li>
+        <li><strong>Web development intern</strong><small>2025 · Built dashboards for an internal tool</small></li>
+      </ul>
+      <h3>Find me online</h3>
+      <div class="row" style="margin-top:0">
+        <a class="btn ghost" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn ghost" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn ghost" href="https://x.com/" target="_blank" rel="noopener">X</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page" id="projects">
+  <h2>Projects</h2>
+  <div class="filters" id="filters">
+    <button class="ghost on" data-f="all">All</button><button class="ghost" data-f="web">Web</button><button class="ghost" data-f="java">Java</button>
+  </div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section class="page" id="blog">
+  <h2>Blog</h2>
+  <div class="post"><small>12 Aug 2026</small><h3>Flexbox vs Grid: which should I use?</h3><p>Use flexbox for one-dimensional rows or columns, and grid when you need rows and columns together.</p></div>
+  <div class="post"><small>2 Jul 2026</small><h3>My first Spring Boot controller</h3><p>A short walkthrough of mapping a URL to a Java method and returning JSON.</p></div>
+  <div class="post"><small>18 May 2026</small><h3>Making a site work on phones</h3><p>Media queries, relative units and testing on a real device.</p></div>
+</section>
+
+<section class="page" id="contact">
+  <h2>Contact</h2>
+  <form id="form" novalidate>
+    <label>Name<input id="n" autocomplete="name"><span class="err"></span></label>
+    <label>Email<input id="e" type="email" autocomplete="email"><span class="err"></span></label>
+    <label>Message<textarea id="m" rows="5"></textarea><span class="err"></span></label>
+    <button type="submit">Send message</button>
+    <div id="res" role="status"></div>
+  </form>
+</section>
+</main>
+<footer>© 2026 Chetanareddy · Edit the text in this file to make it yours.</footer>
+
+<script>
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const root=document.documentElement;
+function save(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+function load(k){try{return localStorage.getItem(k)}catch(e){return null}}
+
+/* Theme + accent */
+const dark=()=>root.dataset.theme==="dark"||(!root.dataset.theme&&matchMedia("(prefers-color-scheme:dark)").matches);
+function setMode(m){root.dataset.theme=m;$("#mode").textContent=m==="dark"?"Light":"Dark";save("mode",m)}
+$("#mode").onclick=()=>setMode(dark()?"light":"dark");
+function setAcc(c){root.style.setProperty("--acc",c);save("acc",c)}
+$$(".sw").forEach(b=>b.onclick=()=>setAcc(b.dataset.c));
+const sm=load("mode");if(sm)setMode(sm);else $("#mode").textContent=dark()?"Light":"Dark";
+const sa=load("acc");if(sa)setAcc(sa);
+
+/* Routing */
+const pages=["home","about","projects","blog","contact"];
+function route(){
+  const p=(location.hash.replace("#/","")||"home");const id=pages.includes(p)?p:"home";
+  $$(".page").forEach(s=>s.classList.toggle("on",s.id===id));
+  $$("nav a").forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#/"+id));
+  if(id==="about")setTimeout(()=>$$(".fill").forEach(f=>f.style.width=f.dataset.w+"%"),50);
+  scrollTo(0,0);
+}
+addEventListener("hashchange",route);route();
+
+/* Typing animation */
+const words=["websites.","Java back ends.","things that work."];let wi=0,ci=0,del=false;
+(function tick(){
+  const w=words[wi];$("#type").textContent=w.slice(0,ci);
+  if(!del&&ci===w.length){del=true;return setTimeout(tick,1500)}
+  if(del&&ci===0){del=false;wi=(wi+1)%words.length}
+  ci+=del?-1:1;setTimeout(tick,del?40:80);
+})();
+
+/* Skills */
+[["HTML & CSS",90],["JavaScript",80],["Java",85],["Spring Boot",65]].forEach(([n,v])=>{
+  $("#skills").insertAdjacentHTML("beforeend",`<div class="bar-skill"><span>${n}<span>${v}%</span></span><div class="track"><div class="fill" data-w="${v}"></div></div></div>`);
+});
+
+/* Projects */
+const projects=[
+ {t:"Online Bookstore",d:"Browse books, add to cart and check out. Spring Boot with a REST API.",c:"java",col:"#2f5bff"},
+ {t:"Weather Now",d:"Live forecast with search and a 5-day view using fetch().",c:"web",col:"#0f9d75"},
+ {t:"Task Board",d:"Drag-and-drop to-do board that remembers your tasks.",c:"web",col:"#e4572e"},
+ {t:"Library Manager",d:"Console app for issuing and returning books, built with core Java.",c:"java",col:"#7b4bd6"}
+];
+function draw(f){
+  $("#grid").innerHTML=projects.filter(p=>f==="all"||p.c===f).map(p=>`<article class="proj"><div class="img" style="background:${p.col}">${p.t.split(" ").map(w=>w[0]).join("")}</div><div class="b"><h3>${p.t}</h3><p>${p.d}</p><div class="links"><a href="https://github.com/" target="_blank" rel="noopener">Code</a><a href="#/projects">Live demo</a></div></div></article>`).join("");
+}
+draw("all");
+$$("#filters button").forEach(b=>b.onclick=()=>{$$("#filters button").forEach(x=>x.classList.toggle("on",x===b));draw(b.dataset.f)});
+
+/* Form validation */
+const rules=[["#n",v=>v.trim().length>=2,"Enter your name (2+ characters)."],["#e",v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v),"Enter a valid email address."],["#m",v=>v.trim().length>=10,"Write a message of at least 10 characters."]];
+$("#form").onsubmit=ev=>{
+  ev.preventDefault();let ok=true;
+  rules.forEach(([s,fn,msg])=>{const el=$(s),good=fn(el.value);el.classList.toggle("bad",!good);el.nextElementSibling.textContent=good?"":msg;if(!good)ok=false});
+  $("#res").innerHTML=ok?'<p class="ok">Thanks! Your message is ready to send. Connect a back end (Spring Boot) to deliver it.</p>':"";
+  if(ok)ev.target.reset();
+};
+</script>
+</body>
+</html>
